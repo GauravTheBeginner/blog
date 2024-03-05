@@ -27,6 +27,11 @@ function BlogList() {
             console.error('Error deleting blog:', error);
         }
     };
+
+    const handleRead = (id) => {
+        navigate(`/fullblog/${id}`);
+    };
+
     return (<>
    
              <button onClick={()=> navigate('/AddingBlogs')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Add</button>
@@ -35,12 +40,12 @@ function BlogList() {
                 <div className="border border-black rounded overflow-hidden shadow-lg w-80" key={index}>
                     <img className="w-full h-48 object-cover" src={item.image} alt={item.title} />
                     <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{item.title}</div>
+                        <div className="font-bold truncate text-xl mb-2">{item.title}</div>
                         <p className="text-gray-700 truncate text-base">{item.description}</p>
                     </div>
                     <div className="px-6 py-4 flex gap-2">
-                        <button onClick={()=> navigate('/AddingBlogs')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Add</button>
-                        <button className="border-2 px-4 py-2 rounded-md bg-green-500 text-white hover:bg-green-600">Read</button>
+                        <button onClick={()=> navigate('/update')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Add</button>
+                        <button onClick={() => handleRead(item._id)} className="border-2 px-4 py-2 rounded-md bg-green-500 text-white hover:bg-green-600">Read</button>
                         <button  onClick={() => handleDelete(item._id)} className="border-2 px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600">Delete</button>
                     </div>
                 </div>
