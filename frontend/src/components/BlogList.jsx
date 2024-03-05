@@ -31,7 +31,9 @@ function BlogList() {
     const handleRead = (id) => {
         navigate(`/fullblog/${id}`);
     };
-
+    const handleUpdate = (id)=>{
+        navigate(`/update/${id}`)
+    }
     return (<>
    
              <button onClick={()=> navigate('/AddingBlogs')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Add</button>
@@ -44,7 +46,7 @@ function BlogList() {
                         <p className="text-gray-700 truncate text-base">{item.description}</p>
                     </div>
                     <div className="px-6 py-4 flex gap-2">
-                        <button onClick={()=> navigate('/update')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Add</button>
+                        <button onClick={()=> handleUpdate(item._id)} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Update</button>
                         <button onClick={() => handleRead(item._id)} className="border-2 px-4 py-2 rounded-md bg-green-500 text-white hover:bg-green-600">Read</button>
                         <button  onClick={() => handleDelete(item._id)} className="border-2 px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600">Delete</button>
                     </div>

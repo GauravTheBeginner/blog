@@ -28,13 +28,14 @@ function Add() {
         throw new Error('Network response was not ok');
       }
   
-      // If response is successful, do something
+      alert("upadated")
       setDescription("")
       setImage("")
       setTitle("")
+      navigate('/')
     } catch (error) {
       console.error('There was a problem with your fetch operation:', error);
-      // Handle error
+
     }
   };
   
