@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// const MONGO_URI = "mongodb+srv://gaurav8861r:project@cluster0.hysifws.mongodb.net/"
+
 const MONGO_URI = require('../Config/config')
 
 const connection = async () => {
