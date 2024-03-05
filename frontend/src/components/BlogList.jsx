@@ -7,6 +7,7 @@ function BlogList() {
         const fetchBlogs = async () => {
             try {
                 const response = await fetch('http://localhost:8000/user/blogs/');
+                
                 const data = await response.json();
                 setBlogs(data);
             } catch (error) {
@@ -21,7 +22,7 @@ function BlogList() {
             await fetch(`http://localhost:8000/user/blogs/${id}`, {
                 method: 'DELETE'
             });
-            // After successful deletion, you may want to update the UI to reflect the change
+           
             setBlogs(prevBlogs => prevBlogs.filter(blog => blog._id !== id));
         } catch (error) {
             console.error('Error deleting blog:', error);

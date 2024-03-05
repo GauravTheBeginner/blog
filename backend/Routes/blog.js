@@ -1,5 +1,6 @@
 const { Router } = require("express");
-const { blog } = require("../DB/db");
+const { blog, admin } = require("../DB/db");
+const userMiddleware = require("../Middleware/user");
 
 
 const router = Router();
@@ -80,5 +81,33 @@ router.delete('/blogs/:id',async(req,res)=>{
         console.error("Error deleting blog:", error);
     }
 })
+router.post('/signup',async(req,res)=>{
+    const username = req.body.username;
+    const password = req.body.password;
+    try {
+        await admin.create({username,password})
+        
+    } catch (error) {
+        console.log(error)
+    }
+    res.json({
+        msg:"userCreated",
+    })
+})
 
+
+
+router.post('/signin',userMiddleware,async(req,res)=>{
+    const username = req.headers.username;
+    const password = req.headers.password;
+    try {
+        await admin.find({username,password})
+        
+    } catch (error) {
+        console.log(error)
+    }
+    res.json({
+        msg:"userCreated",
+    })
+})
 module.exports =  router

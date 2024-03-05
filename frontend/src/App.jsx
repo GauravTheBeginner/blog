@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Add from './components/Add';
 import FullBlog from './components/FullBlog';
 import Update from './components/Update';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
 function App() {
 
 
@@ -13,7 +15,9 @@ function App() {
   <main className='boder-2 border-black'>
   <Router>
     <Routes>
-      <Route path='/' element={<BlogList/>}/>
+    <Route path='/' element={<Signup/>}/>
+    <Route path='/signin' element={<Signin/>}/>
+      <Route path='/blogs' element={<BlogList/>}/>
       <Route path='/AddingBlogs' element={<Add/>}/>
       <Route path='/fullblog/:id' element={<FullBlog />} />
       <Route path='/update/:id' element={<Update />} />

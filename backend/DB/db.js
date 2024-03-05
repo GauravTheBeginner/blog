@@ -21,8 +21,11 @@ const blogSchema = new mongoose.Schema({
   description: String,
   image: String,
 })
-
-
+const adminSchema = new mongoose.Schema({
+  username:String,
+  password:String,
+})
+const admin = mongoose.model("admin",adminSchema)
 const blog = mongoose.model("blog", blogSchema);
 
-module.exports = { blog }
+module.exports = { blog ,admin}
