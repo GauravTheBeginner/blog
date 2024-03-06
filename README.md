@@ -22,7 +22,7 @@ This is a simple blog application developed to practice CRUD (Create, Read, Upda
 
 ## Installation
 
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone https://github.com/GauravTheBeginner/Blog-Application.git`
 2. Install dependencies in each folder: `npm install`
 3. Configure MongoDB URI:
    - Create a `config` folder in the backend folder.
