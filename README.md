@@ -41,10 +41,6 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 
 This application was developed by [Your Name] as a learning project inspired by the teachings of [Harkirat Sir] during the course on CRUD functionality.
 
-## Connect with Me
-
-Follow me on [Twitter](https://twitter.com/gauravbobal546) for more updates and projects!
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
