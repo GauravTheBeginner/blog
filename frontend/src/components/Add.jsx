@@ -32,7 +32,7 @@ function Add() {
       setDescription("")
       setImage("")
       setTitle("")
-      navigate('/')
+      navigate('/blogs')
     } catch (error) {
       console.error('There was a problem with your fetch operation:', error);
 

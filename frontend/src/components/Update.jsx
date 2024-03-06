@@ -34,7 +34,7 @@ function Update() {
       setDescription("")
       setImage("")
       setTitle("")
-      navigate('/')
+      navigate('/blogs')
     } catch (error) {
       console.error('There was a problem with your fetch operation:', error);
       // Handle error
@@ -45,7 +45,7 @@ function Update() {
 
   return (
     <>
-      <button onClick={()=> navigate('/')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">BLOGS</button>
+      <button onClick={()=> navigate('/blogs')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">BLOGS</button>
     <div className=" h-screen px-9 flex py-16">
     <div className=" w-screen  mx-auto p-4 bg-white shadow-md rounded-lg">
       <label htmlFor="title" className="block text-gray-700 font-semibold">Title</label>

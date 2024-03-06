@@ -27,7 +27,7 @@ function FullBlog() {
 
     return (
         <>
-          <button onClick={()=> navigate('/')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Blogs</button>
+          <button onClick={()=> navigate('/blogs')} className="border-2 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">Blogs</button>
         <div className="flex  px-9  py-10 justify-center items-center ">
             <div className="py-9 px-16 border border-gray-300 rounded-lg">
                 <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
