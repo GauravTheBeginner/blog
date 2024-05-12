@@ -3,36 +3,36 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function Update() {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [content, setcontent] = useState("");
+
   const navigate = useNavigate();
   const { id } = useParams();
   const updateData = async () => {
-    if (!title || !description || !image) {
+    if (!title || !content ) {
       alert("Please fill out all fields");
       return;
     }
     try {
-      const response = await fetch(`http://localhost:8000/user/blogs/${id}`, {
-        method: 'PUT',
+      const response = await fetch(`http://127.0.0.1:8000/api/blogposts/?id=${id}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           title: title,
-          description: description,
-          image: image
+          content: content,
+          
         })
       });
-  
+      console.log(response)
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
   
    
       alert("upadated")
-      setDescription("")
-      setImage("")
+      setcontent("")
+     
       setTitle("")
       navigate('/blogs')
     } catch (error) {
@@ -58,21 +58,12 @@ function Update() {
         className="mt-1 mb-4 p-2 block w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
       />
 
-      <label htmlFor="image" className="block text-gray-700 font-semibold">Image URL</label>
-      <input 
-        required 
-        onChange={(e) => setImage(e.target.value)} 
-        value={image} 
-        type="text" 
-        id="image" 
-        className="mt-1 mb-4 p-2 block w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
-      />
-
+     
       <label htmlFor="content" className="block text-gray-700 font-semibold">Content</label>
       <textarea 
         required 
-        onChange={(e) => setDescription(e.target.value)} 
-        value={description} 
+        onChange={(e) => setcontent(e.target.value)} 
+        value={content} 
         id="content" 
         className="mt-1 mb-4 p-2 block w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
         rows="5"
