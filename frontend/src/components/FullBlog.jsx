@@ -10,7 +10,7 @@ function FullBlog() {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/user/blogs/${id}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/blogposts/?id=${id}`);
                 const data = await response.json();
                 setBlog(data);
             } catch (error) {
