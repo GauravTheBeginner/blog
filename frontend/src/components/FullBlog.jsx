@@ -31,8 +31,8 @@ function FullBlog() {
         <div className="flex  px-9  py-10 justify-center items-center ">
             <div className="py-9 px-16 border border-gray-300 rounded-lg">
                 <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
-                <img className=" w-full h-[20rem] object-cover rounded-lg mb-4" src={blog.image} alt={blog.title} />
-                <p className="text-lg">{blog.description}</p>
+              
+                <p className="text-lg">{blog.content}</p>
             </div>
         </div>
         </>
